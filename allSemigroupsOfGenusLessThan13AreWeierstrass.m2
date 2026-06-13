@@ -14,8 +14,8 @@ Komeda, On the existence of Weierstrass gap sequences on curves of genus ≤8
    -- J. Pure Appl. Algebra 97, No. 1, 51-71 (1994).
 established that every semigroup of genus < 8 is Weierstrass.
 
-The file "smoothingFamiliesGenus89and10.dbm" contains smoothing families for all semigroups of genus 
-g<11 which are not yet known to be Weierstrass. Checking flatness and smoothness 
+The file "smoothingFamiliesGenus.dbm" contains smoothing families for all semigroups of genus 
+g<13 which are not yet known to be Weierstrass. Checking flatness and smoothness 
 establishes the Theorem.
 
 
