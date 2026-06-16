@@ -315,18 +315,18 @@ We filter $A$ by ideals, letting $A_{i} \subset A$ be the elements having pole o
 at $p$. Set
 $$
 \begin{aligned}
-&A_{z} := \oplus_{i\geq 0} A_iz^{i}.
+&A_{z} := \oplus_{i\in \ZZ} A_iz^{-i}.
 \end{aligned}
 $$
- The $k[z]$-algebra $A_{z}$ is finitely generated over $k$ by  elements
+ The $k[z]$-algebra $A_{z}$ is finitely generated over $k[z]$ by  elements
  corresponding to the minimal generators of $S$, and flat over $k[z]$ because it is torsion free. 
  The formulas 
  $$
- k[z,z^{-1}]\otimes_{k[z]} A_{z} = k[z,z^{-1}]\otimes_{k}  A_{z} 
+ k[z,z^{-1}]\otimes_{k[z]} A_{z} \cong k[z,z^{-1}]\otimes_{k}  A 
  $$
  and 
  $$ 
- k[z]/(z)\otimes_{k[z]} \tilde A  = \oplus A_{i}/A_{i+1} = k[S]
+ k[z]/(z)\otimes_{k[z]} A_z \cong \bigoplus_{i\in \ZZ} A_{i}/A_{i+1} \cong k[S]
  $$ 
  are evident, proving the Proposition.
 \end{proof}
