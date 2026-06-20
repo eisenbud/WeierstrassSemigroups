@@ -188,7 +188,7 @@ section.  Under an additional hypothesis, this multi-section tracks singular poi
 that no deformation can be smooth. By Pinkham's Theorem~\cite[Chapter IV]{MR376672}, this implies that the semigroup is not Weierstrass. We call a semigroup satisfying these conditions \emph{degree-special} (Definition~\ref{degree-special def}).
 
 On the other hand, we show that every semigroup of genus $<13$ is Weierstrass. There are 1413 such semigroups \cite{NumericalSemigroupsSource}, or \url{https://oeis.org/A007323}. Results in the literature, quoted below, prove that 781 of them occur as
-Weierstrass semigroups. In an auxiliary file we give explicit positively graded smoothing families
+Weierstrass semigroups. In an auxiliary file (see below) we give explicit positively graded smoothing families
 for the other 632, found using computational methods that we explain in Section~\ref{comp}. By
 Pinkham's Theorem~\cite{MR376672}, this completes the proof that all 1413 examples occur
 as Weierstrass semigroups.
@@ -200,6 +200,19 @@ $$
  has the smallest possible genus, multiplicity, and embedding dimension of any non-Weierstrass semigroup. In Theorem~\ref{all genera}, we exhibit 4-generator semigroups of multiplicity 6 and
  every genus $g \geq 13$ except $g=15$, for which we give an example of
  multiplicity 8.
+
+We have put the Macaulay2 code necessary to construct and verify our assertions in the
+GitHub repository {\bf eisenbud/WeierstrassSemigroups}.
+The smoothing families for the 632 not previously known Weierstrass semigroups are given in
+the file {\bf smoothingFamilies.dbm}.
+To check the flatness and smoothness
+of these families, simply execute the code in the file 
+{\bf allSemigroupsOfGenusLessThan13AreWeierstrass.m2}.
+The code that we have used both to test whether a semigroup is degree-special and
+to prove that certain families we have constructed semigroups is in 
+{\bf NumericalSemigroups.m2} and {\bf WeierstrassSemigroups.m2},
+which are distributed with the Macaulay2 system
+\cite{M2}.
 
 \subsection*{Background and history}
 Suppose that $X$ is a compact Riemann surface, or more generally a smooth
@@ -254,7 +267,8 @@ on a surface of genus 16
 is only 45.) Since 1980 many other semigroups have been shown not to
 be Weierstrass, both using Buchweitz's method and otherwise; see for example 
   \cite{MR4332500}, \cite{zbMATH07431143}, 
- \cite{MR3010539}. Examples by Komeda \cite{MR3010539} had, until now, the
+ \cite{MR3010539}, and for a different approach see \cite{Stoehr}.
+  Examples by Komeda \cite{MR3010539} had, until now, the
  smallest known multiplicities, 8 and 12.
 Until this paper, no non-Weierstrass semigroup of genus $<16$ or multiplicity $<8$ was known.
 
