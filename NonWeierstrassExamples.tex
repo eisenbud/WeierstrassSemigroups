@@ -201,7 +201,7 @@ $$
 \{6,9,13,16\}
 $$
  has the smallest possible genus, multiplicity, and embedding dimension of any non-Weierstrass semigroup. In Theorem~\ref{all genera}, we exhibit 4-generator semigroups of multiplicity 6 and
- every genus $g \geq 13$ except $g=15$, for which we give an example of
+ every genus $g \geq 13$ except $g=15$ and $g=18$. For $g=15$ we give an example of
  multiplicity 8.
 
 We have put the Macaulay2 code necessary to construct and verify our assertions in the
@@ -909,7 +909,7 @@ Indeed a flat smoothing family is given by
       x_{4}^{2}-x_{1}x_{0}^{9}-x_{1}z^{63}.
       \end{array}$$
 In this family, the value of the section is always the point defined by the ideal $(x_{0},x_{1},x_{2},x_{4})$.
-Computational steps to produce such families are described in the next section.
+Computational steps to produce such families are described in Section \ref{comp}.
  \medbreak
 \end{example}
 
@@ -1001,10 +1001,12 @@ Pinkham's Theorem  \cite{MR376672} and
  computed explicit 1-parameter positively graded smoothing families  over $\QQ$ directions for each of the 632 examples that was not already known. This shows that they are Weierstrass semigroups over $\QQ$, and thus over $\CC$. 
 
 We exhibit these families
-In the auxiliary file to the arXiv preprint of this paper  \cite{NumericalSemigroupsSource}. There we also provide
-a {\it Macaulay2} program that checks  flatness and smoothness for each of them. To run the code checking all these families takes about 10 minutes.
+In the auxiliary file to the arXiv preprint of this paper  
+or in the GitHub repository {\bf eisenbud/WeierstrassSemigroups} \url{https://github.com/eisenbud/WeierstrassSemigroups}. \\
+In these places we also provide a {\it Macaulay2} program  {\bf 
+allSemigroupsOfGe\-nusLessThan13AreWeierstrass.m2} that checks  flatness and smoothness for each of them. To run the code takes about 10 minutes.
 
-Here is an outline of the computation we made for each semigroup, initially working over a finite field $\ZZ/p$ for computational efficiency. To aid in the eventual lifting to characteristic 0 we took $p$ on the order of $10^{7}$.
+Here is an outline of the computation we made for each semigroup to find a smoothing family. In the first steps we work over a finite field $\ZZ/p$ for computational efficiency. To aid in the eventual lifting to characteristic 0 we took $p$ on the order of $10^{7}$.
 
 \begin{enumerate}
 \item We form the graded universal unfolding of the semigroup ideal, adding only positive degree parameters,
@@ -1012,7 +1014,7 @@ corresponding to deformations of negative degree in the sense of \cite{MR376672}
 
 An alternate approach is to use Nathan Ilten's {\it Macaulay2} package VersalDeformations \cite{VersalDeformationsSource, VersalDeformationsArticle}
 
-Restricting to deformation parameters in certain range of degrees can make the computation
+Restricting to deformation parameters in certain range of degrees, e.g. degrees $>b$, can make the computation
 easier, and we were able to do this in most cases.
 
 \item Use Gr\"obner bases to compute equations on the parameters that guarantee the constancy
@@ -1062,7 +1064,7 @@ as an intersection of maximal ideals corresponding to points on $\widetilde C$.
 The bottlenecks in this computation are computing  the flattening relations of a (restricted) unfolding, pruning its ideal, decomposing the base into  components; and checking smoothness. 
 
 \begin{remark}
-Step (\ref{6}.a) is  successful amazingly often. In fact for every one of the 632 not-previously-known examples of genus $<13$ that we had to consider where $B\neq 0$, we were able to find a subspace $V$, possibly after varying the base component $B$, and the choice of $d$. 
+Step (\ref{6}.a) is  successful amazingly often. In fact for every one of the 632 not-previously-known examples of genus $<13$ that we had to consider where $B\neq 0$, we were able to find a subspace $V$, possibly after varying the base component $B$, and the choice of $b$. 
 
  A possible reason for this success is that the base of the deformation space is defined by a homogeneous ideal in a polynomial ring where  the variables have many different degrees. Quite often the largest degree variables occur only once and in quadratic terms of the equations, so that their values are determined by the values of the lower degree variables.
 The fact that they often occur in quadratic monomials might come from the fact that the obstruction map is quadratic.
