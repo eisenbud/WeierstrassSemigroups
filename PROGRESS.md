@@ -203,4 +203,5 @@ Saved `compare-density.py`, `density-comparison.json`, and `DENSITY.md`
 alongside the earlier experiment. Sources: https://oeis.org/A007323/b007323.txt
 and Alex Zhai, https://arxiv.org/abs/1111.3142. No additional enumeration is
 needed for this comparison; an asymptotic result within fixed embedding
-dimension remains a separate research problem.
+
+###### dimension remains a separate research problem.
